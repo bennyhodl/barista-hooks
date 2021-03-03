@@ -24,12 +24,16 @@
   },
   "homepage": "https://github.com/BennyBlockchain/barista#readme",
   "dependencies": {
-    "@babel/runtime": "^7.13.9",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"	
+  },
   "devDependencies": {
     "@babel/core": "^7.13.8",
+    "@babel/runtime": "^7.13.9",
     "@babel/plugin-external-helpers": "^7.12.13",
     "@babel/plugin-transform-runtime": "^7.13.9",
     "@babel/preset-env": "^7.13.9",
