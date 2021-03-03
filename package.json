@@ -1,6 +1,6 @@
 {
   "name": "@bennyblockchain/barista",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "***React*** hooks library for HIVE.",
   "main": "src/index.js",
   "scripts": {
