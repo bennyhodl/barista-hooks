@@ -903,29 +903,24 @@ var getDiscussion = /*#__PURE__*/function () {
   };
 }();
 var getTrending = /*#__PURE__*/function () {
-  var _ref2 = _asyncToGenerator( /*#__PURE__*/regenerator.mark(function _callee2() {
-    var tag,
-        params,
-        trending,
-        _args2 = arguments;
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/regenerator.mark(function _callee2(tag) {
+    var params, trending;
     return regenerator.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
-            tag = _args2.length > 0 && _args2[0] !== undefined ? _args2[0] : "";
             params = {
               limit: 20,
-              tag: tag,
-              category: "hive-167922"
+              tag: tag
             };
-            _context2.next = 4;
+            _context2.next = 3;
             return hive__default['default'].api.callAsync("condenser_api.get_discussions_by_trending", params);
 
-          case 4:
+          case 3:
             trending = _context2.sent;
             return _context2.abrupt("return", trending);
 
-          case 6:
+          case 5:
           case "end":
             return _context2.stop();
         }
@@ -933,7 +928,7 @@ var getTrending = /*#__PURE__*/function () {
     }, _callee2);
   }));
 
-  return function getTrending() {
+  return function getTrending(_x3) {
     return _ref2.apply(this, arguments);
   };
 }();
