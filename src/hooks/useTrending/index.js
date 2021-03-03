@@ -2,11 +2,6 @@ import { useReducer, useEffect } from "react";
 import { getTrending } from "../../api/hive";
 
 export default function useTrending(tag) {
-  const actions = {
-    FETCHING: "FETCHING",
-    FETCHED: "FETCHED",
-    FETCHING_ERROR: "FETCHING_ERROR",
-  };
   const initialState = {
     trending: [],
     loading: false,
@@ -46,6 +41,7 @@ export default function useTrending(tag) {
       state.trending = trending;
 
       dispatch({ type: "FETCHED" });
+      return;
     });
   };
   return [state, { fetchTrending }];

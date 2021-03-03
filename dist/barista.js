@@ -1072,6 +1072,7 @@ function useTrending(tag) {
       dispatch({
         type: "FETCHED"
       });
+      return;
     });
   };
 
