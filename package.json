@@ -2,10 +2,11 @@
   "name": "@bennyblockchain/barista",
   "version": "0.0.8",
   "description": "***React*** hooks library for HIVE.",
-  "main": "src/index.js",
+  "main": "dist/barista.js",
   "scripts": {
     "test": "jest",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "dev": "parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/BennyBlockchain/barista#readme",
   "dependencies": {
+    "@hiveio/hive-js": "^0.8.13",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
@@ -41,6 +43,7 @@
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-node-resolve": "^11.2.0",
+    "parcel-bundler": "1.12.3",
     "rollup": "^2.40.0"
   }
 }

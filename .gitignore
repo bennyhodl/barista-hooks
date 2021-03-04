@@ -1,2 +1,8 @@
 node_modules/
 examples/
+
+.cache
+
+App.jsx
+dev.js
+index.html
