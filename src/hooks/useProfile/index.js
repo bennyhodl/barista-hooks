@@ -25,8 +25,11 @@ const useProfile = (type, username, observer) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const getProfile = () => {
     getHiveProfile(username, observer).then((res) => {
-      console.log(res);
-      state.user = res;
+      if (type === "base") {
+        state.user = res.metadata.profile;
+      } else {
+        state.user = res;
+      }
       dispatch({ type: "FETCHED" });
       return;
     });

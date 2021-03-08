@@ -1,17 +1,13 @@
-import { useReducer } from "react";
+import { useReducer, useEffect } from "react";
 import { getDiscussion } from "../../api/hive";
 
 export default function usePost(author, link) {
-  const actions = {
-    FETCHING: "FETCHING",
-    FETCHED: "FETCHED",
-    FETCHING_ERROR: "FETCHING_ERROR",
-  };
   const initialState = {
     post: {},
     loading: true,
     error: false,
   };
+
   const reducer = (state, action) => {
     switch (action.type) {
       case "FETCHING":
@@ -24,17 +20,17 @@ export default function usePost(author, link) {
         return state;
     }
   };
-
+  useEffect(() => {
+    getPost();
+  }, []);
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const getPost = async () => {
     console.log(`In useP: ${author}`);
-    dispatch({ type: actions.FETCHING });
+
     getDiscussion(author, link).then((post) => {
       state.post = post;
-      console.log(state.post);
-      dispatch({ type: actions.FETCHED });
-      console.log(state.post);
+      dispatch({ type: "FETCHED" });
     });
   };
   return [state, { getPost }];

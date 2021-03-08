@@ -1,7 +1,7 @@
 import { useReducer, useEffect } from "react";
 import { getRankedPosts } from "../../api/bridge";
 
-export default function useRankedPosts(sort, tag, observer) {
+const useRankedPosts = (sort, tag, observer) => {
   const initialState = {
     posts: [],
     loading: false,
@@ -12,7 +12,7 @@ export default function useRankedPosts(sort, tag, observer) {
       case "FETCHING":
         return { ...state, loading: true };
       case "FETCHED":
-        return { ...state, posts: state.posts, loading: false };
+        return { ...state, loading: false };
       case "ERROR":
         return { ...state, loading: false, error: true };
       default:
@@ -22,15 +22,18 @@ export default function useRankedPosts(sort, tag, observer) {
   useEffect(() => {
     fetchRankedPosts();
   }, []);
+
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const fetchRankedPosts = () => {
     getRankedPosts(sort, tag, observer).then((res) => {
+      console.log(state);
       state.posts = res;
+
       dispatch({ type: "FETCHED" });
       return;
     });
   };
-  console.log(`State: ${JSON.stringify(state)}`);
   return [state];
-}
+};
+export default useRankedPosts;
