@@ -5,3 +5,4 @@ rollup.config.js
 yarn.lock
 .babelrc
 .gitignore
+.cache/
