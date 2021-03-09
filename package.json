@@ -1,6 +1,6 @@
 {
   "name": "@bennyblockchain/barista",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "***React*** hooks library for HIVE.",
   "main": "dist/barista.js",
   "scripts": {
