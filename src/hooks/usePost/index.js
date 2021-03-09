@@ -1,5 +1,5 @@
 import { useReducer, useEffect } from "react";
-import { getDiscussion } from "../../api/hive";
+import { getDiscussion } from "../../api/condenser";
 
 export default function usePost(author, link) {
   const initialState = {
